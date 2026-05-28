@@ -7,18 +7,19 @@ import mock6 from "@/data/mock-6.json";
 import mock7 from "@/data/mock-7.json";
 import mock8 from "@/data/mock-8.json";
 
-export function getMockTest(id:string){
+const mocks: Record<number, any> = {
+  1: mock1,
+  2: mock2,
+  3: mock3,
+  4: mock4,
+  5: mock5,
+  6: mock6,
+  7: mock7,
+  8: mock8,
+};
 
-  const mocks:any = {
-    1: mock1,
-    2: mock2,
-    3: mock3,
-    4: mock4,
-    5: mock5,
-    6: mock6,
-    7: mock7,
-    8: mock8,
-  };
-
-  return mocks[id];
+export function getMockTest(
+  id: number
+) {
+  return mocks[id] || [];
 }
